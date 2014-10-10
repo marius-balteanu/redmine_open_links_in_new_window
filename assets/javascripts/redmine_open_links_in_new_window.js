@@ -1,5 +1,5 @@
 (function()
-{
+{	
 	/**
 	 * Need to be binded to anchor on call
 	 */
@@ -15,6 +15,7 @@
 			this.target = '_blank';
 		}
 	};
+	var selectors = "div.wiki a, div.attachments a, div.journal ul.details a, a.external, td.cf_6 a";
 
 	if (document.observe)
 	{
@@ -23,7 +24,7 @@
 
 		document.observe('dom:loaded', function()
 		{
-			var links = $$('div.wiki a, div.attachments a, div.journal ul.details a, a.external');
+			var links = $$(selectors);
 			for (var i = 0; i < links.length; i++)
 			{
 				handleAnchor.call(links[i]);
@@ -37,7 +38,7 @@
 
 		jQuery(document).ready(function()
 		{
-			jQuery('div.wiki a, div.attachments a, div.journal ul.details a, a.external').each(handleAnchor);
+			jQuery(selectors).each(handleAnchor);
 		});
 	}
 	else
