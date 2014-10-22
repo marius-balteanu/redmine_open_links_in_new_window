@@ -15,7 +15,7 @@
 			this.target = '_blank';
 		}
 	};
-	var selectors = "div.wiki a, div.attachments a, div.journal ul.details a, a.external, td.cf_6 a";
+	var selectors = "div.wiki a, div.attachments a, div.journal ul.details a, a.external, td.cf_6 a, td.cf_17 a";
 
 	if (document.observe)
 	{
